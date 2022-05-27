@@ -5,10 +5,7 @@
 
 /** Destruct environment variable to get database configuration */
 const {
-  DB_USERNAME = "iczlmeuh",
-    DB_PASSWORD = "sZdDjl91Wa_fzvy7JHBj8H2jb4NeTO_l",
-    DB_HOST = "tiny.db.elephantsql.com",
-    DB_NAME = "iczlmeuh",
+  DB_USERNAME = "iczlmeuh", DB_PASSWORD = "sZdDjl91Wa_fzvy7JHBj8H2jb4NeTO_l", DB_HOST = "tiny.db.elephantsql.com", DB_NAME = "iczlmeuh"
 } = process.env;
 
 module.exports = {
