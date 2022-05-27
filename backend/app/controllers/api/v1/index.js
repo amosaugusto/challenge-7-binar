@@ -3,8 +3,14 @@
  * @author Fikri Rahmat Nurhidayat
  */
 
-const postController = require("./postController");
+const usersController = require("./usersController");
+const authController = require("./authController");
+const handleGoogleLoginOrRegister = require("./handleGoogleLoginOrRegister");
+const carsController = require("./carsController");
 
 module.exports = {
-  postController,
+  usersController,
+  authController,
+  handleGoogleLoginOrRegister,
+  carsController,
 };
