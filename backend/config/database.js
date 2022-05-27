@@ -5,17 +5,17 @@
 
 /** Destruct environment variable to get database configuration */
 const {
-  DB_USERNAME = null,
-  DB_PASSWORD = null,
-  DB_HOST = "127.0.0.1",
-  DB_NAME = "database",
+  DB_USERNAME = "iczlmeuh",
+    DB_PASSWORD = "sZdDjl91Wa_fzvy7JHBj8H2jb4NeTO_l",
+    DB_HOST = "tiny.db.elephantsql.com",
+    DB_NAME = "iczlmeuh",
 } = process.env;
 
 module.exports = {
   development: {
     username: DB_USERNAME,
     password: DB_PASSWORD,
-    database: `${DB_NAME}_development`,
+    database: DB_NAME,
     host: DB_HOST,
     dialect: "postgres",
   },
