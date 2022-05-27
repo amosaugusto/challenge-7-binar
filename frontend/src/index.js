@@ -1,14 +1,54 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import { Provider } from "react-redux";
+// import App from "./App";
+import Home from "./pages/Home";
+import Cars from "./pages/Cars";
+import Hasil from "./pages/Hasil";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
+import Protected from "./components/Protected";
+import store from "./redux/store";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  <Provider store={store}>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/cars"
+          element={
+            <Protected>
+              <Cars />
+            </Protected>
+          }
+        />
+        {/* <Route path="/Hasil" element={<Hasil />} /> */}
+        <Route
+          path="/register"
+          element={
+            <GoogleOAuthProvider clientId="486109520194-gfqjpta3f12m5lev3brvapmls11enlrj.apps.googleusercontent.com">
+              <Register />
+            </GoogleOAuthProvider>
+          }
+        ></Route>
+        <Route
+          path="/login"
+          element={
+            <GoogleOAuthProvider clientId="486109520194-gfqjpta3f12m5lev3brvapmls11enlrj.apps.googleusercontent.com">
+              <Login />
+            </GoogleOAuthProvider>
+          }
+        ></Route>
+      </Routes>
+    </BrowserRouter>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
